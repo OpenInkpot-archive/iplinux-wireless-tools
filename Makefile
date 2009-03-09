@@ -19,7 +19,7 @@ RANLIB = ranlib
 ## a local version (non-root).
 ## Standard distros should comment that option to save space and to
 ## build libiw.so used by third parties...
-BUILD_STATIC = y
+# BUILD_STATIC = y
 
 ## Uncomment this to build without using libm (less efficient).
 ## This is mostly useful for embedded platforms without maths.
@@ -75,8 +75,8 @@ DYNAMIC_LINK= libiw.so
 # Install directories
 INSTALL_DIR= $(PREFIX)/sbin
 INSTALL_LIB= $(PREFIX)/lib
-INSTALL_INC= $(PREFIX)/include
-INSTALL_MAN= $(PREFIX)/man
+INSTALL_INC= $(PREFIX)/usr/include
+INSTALL_MAN= $(PREFIX)/usr/share/man
 
 # Various commands
 RM = rm -f
@@ -104,9 +104,9 @@ ifdef BUILD_WE_ESSENTIAL
 endif
 
 # Other flags
-CFLAGS=-Os -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow \
+#CFLAGS=-Os -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow \
 	-Wpointer-arith -Wcast-qual -Winline -I.
-#CFLAGS=-O2 -W -Wall -Wstrict-prototypes -I.
+CFLAGS=-O2 -W -Wall -Wstrict-prototypes -I.
 DEPFLAGS=-MMD
 XCFLAGS=$(CFLAGS) $(DEPFLAGS) $(WARN) $(HEADERS) $(WELIB_FLAG) $(WEDEF_FLAG)
 PICFLAG=-fPIC
@@ -115,7 +115,7 @@ PICFLAG=-fPIC
 all:: $(IWLIB) $(PROGS)
 
 %: %.o
-	$(CC) $(LDFLAGS) $(STRIPFLAGS) $(XCFLAGS) -o $@ $^ $(LIBS)
+	$(CC) $(LDFLAGS) $(STRIPFLAGS) $(XCFLAGS) -o $@ $^
 %.o: %.c wireless.h
 	$(CC) $(XCFLAGS) -c $<
 %.so: %.c wireless.h
