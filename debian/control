@@ -1,13 +1,13 @@
 Source: wireless-tools
-Section: net
+Section: core
 Priority: extra
-Maintainer: Guus Sliepen <guus@debian.org>
+Maintainer: Yauhen Kharuzhy <yauhen.kharuzhy@promwad.com>
 Standards-Version: 3.8.0
 Build-Depends: debhelper (>= 7)
 Homepage: http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
 
 Package: wireless-tools
-Section: net
+Section: core
 Architecture: any
 Depends: ${shlibs:Depends}
 Description: Tools for manipulating Linux Wireless Extensions 
@@ -17,7 +17,7 @@ Description: Tools for manipulating Linux Wireless Extensions
  specific stats.
 
 Package: ifrename
-Section: net
+Section: core
 Architecture: any
 Depends: ${shlibs:Depends}
 Conflicts: wireless-tools (<< 27+28pre9)
@@ -28,7 +28,7 @@ Description: Rename network interfaces based on various static criteria
  interface MAC address.
 
 Package: libiw30
-Section: libs
+Section: core
 Architecture: any
 Depends: ${shlibs:Depends}
 Description: Wireless tools - library
