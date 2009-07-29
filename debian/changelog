@@ -1,3 +1,9 @@
+wireless-tools (30~pre8-1.1) asimov; urgency=low
+
+  * IPlinux port
+
+ -- Yauhen Kharuzhy <yauhen.kharuzhy@promwad.com>  Wed, 29 Jul 2009 13:38:00 +0300
+
 wireless-tools (30~pre8-1) experimental; urgency=low
 
   * New upstream release.
